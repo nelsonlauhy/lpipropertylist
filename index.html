@@ -29,6 +29,15 @@
     </style>
 </head>
 <body>
+    <script>
+        var password = "lpi"; // Set your password here
+        var userInput = prompt("Please enter the password to access this page:");
+
+        if (userInput !== password) {
+            alert("Incorrect password.");
+            window.location.href = 'error.html'; // Redirect to another page or show an error
+        }
+    </script>
     <div class="container card-container">
         <div class="card text-center">
             <!-- Logo Image with increased bottom margin -->
