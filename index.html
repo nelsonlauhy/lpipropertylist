@@ -30,12 +30,18 @@
 </head>
 <body>
     <script>
-        var password = "lpi"; // Set your password here
-        var userInput = prompt("Please enter the password to access this page:");
-
-        if (userInput !== password) {
-            alert("Incorrect password.");
-            window.location.href = 'error.html'; // Redirect to another page or show an error
+        var currentPassword = "12345"; // Set your new password here
+        var savedPassword = localStorage.getItem('userPassword');
+    
+        // Check if the saved password matches the current password
+        if (savedPassword !== currentPassword) {
+            var userInput = prompt("Please enter the password to access this page:");
+    
+            if (userInput === currentPassword) {
+                localStorage.setItem('userPassword', userInput); // Save the new password
+            } else {
+                window.location.href = 'error.html'; // Redirect if password is wrong
+            }
         }
     </script>
     <div class="container card-container">

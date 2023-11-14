@@ -9,31 +9,43 @@
     <style>
         body {
             background-color: #f5f5f5;
-            padding-top: 40px;
+            padding-top: 20px; /* Reduced top padding */
         }
-        .center-content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            height: 100vh;
+        .error-container {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto; /* Centering the container */
             text-align: center;
         }
-        .back-button {
-            margin-top: 20px;
+        .btn-go {
+            width: 100%; /* Full width of the container */
+            padding: 10px; /* Larger padding for a bigger button */
+            font-size: 1.2em; /* Larger font size */
+            margin-top: 20px; /* Spacing above the button */
         }
     </style>
 </head>
 <body>
-    <div class="container center-content">
-        <img src="images/lpi_logo.png" alt="LPI Logo" style="max-width: 200px; margin-bottom: 20px;">
-        <h3>Access Denied</h3>
-        <p>Incorrect password. Please try again.</p>
-        <button onclick="window.location.href='index.html'" class="btn btn-primary back-button">Back to Login</button>
+    <div class="container">
+        <div class="error-container">
+            <img src="images/lpi_logo.png" alt="LPI Logo" style="max-width: 200px; margin-bottom: 20px;">
+            <h3>Access Denied</h3>
+            <p>Incorrect password. Please try again.</p>
+            <button onclick="clearPassword()" class="btn btn-secondary btn-go">Back to Login</button>
+        </div>
     </div>
+    <!-- Script for clearing the password and redirecting -->
+    <script>
+        function clearPassword() {
+            localStorage.removeItem('userPassword'); // Clear the saved password
+            window.location.href = 'index.html'; // Redirect to the login page
+        }
+    </script>
     <!-- Bootstrap JS and its dependencies -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+
