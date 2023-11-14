@@ -80,19 +80,23 @@
 <body>
     <div class="fixed-top bg-white border-bottom">
         <div class="container">
-            <div class="row py-3 align-items-center"> <!-- Align items center for vertical alignment -->
-                <div class="col-sm-1">
-                    <span class="back-icon" onclick="window.location.href='index.html'">&lt;</span> <!-- Text-based arrow -->
+            <div class="row py-3 align-items-center">
+                <!-- Back icon, smaller width on mobile -->
+                <div class="col-2 col-sm-1">
+                    <span class="back-icon" onclick="window.location.href='index.html'">&lt;</span>
                 </div>
-                <div class="col-sm-7">
-                    <input type="text" id="searchInput" class="form-control" placeholder="Enter search term...">
+                <!-- Search input, larger width on mobile -->
+                <div class="col-6 col-sm-7">
+                    <input type="text" id="searchInput" class="form-control" placeholder="Enter search term from property list...">
                 </div>
-                <div class="col-sm-4">
+                <!-- Search button, adjusted width on mobile -->
+                <div class="col-4 col-sm-4">
                     <button onclick="searchDatabase()" id="searchButton" class="btn">Search</button>
                 </div>
             </div>
         </div>
     </div>
+    
     <div class="container mt-5 pt-3">
         <div id="results"></div>
     </div>
